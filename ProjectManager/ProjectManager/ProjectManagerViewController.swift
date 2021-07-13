@@ -13,6 +13,13 @@ class ProjectManagerViewController: UIViewController {
     let doingTableViewController = DOINGTableViewController()
     let doneTableViewController = DONETableViewController()
     
+    let stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.alignment = .fill
+        stackView.axis = .horizontal
+
+        return stackView
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +29,26 @@ class ProjectManagerViewController: UIViewController {
         view.backgroundColor = .white
         navigationItem.title = "Project Manager"
 
+        view.addSubview(stackView)
+        stackView.addArrangedSubview(todoTableViewController.view)
+        stackView.addArrangedSubview(doingTableViewController.view)
+        stackView.addArrangedSubview(doneTableViewController.view)
+        
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        todoTableViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        doingTableViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        doneTableViewController.view.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+             stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+             stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+             stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+
+            todoTableViewController.view.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/3),
+             doingTableViewController.view.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/3),
+             doneTableViewController.view.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/3)
+        ])
 
         }
     @objc func buttonPressed(_ sender: Any) {
