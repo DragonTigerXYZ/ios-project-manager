@@ -11,34 +11,50 @@ class RegisterViewController: UIViewController {
 
     let leftButton = UIBarButtonItem.init(title: "Cancel", style: .done, target: self, action: nil)
     let rightButton = UIBarButtonItem.init(title: "Done", style: .done, target: self, action: nil)
-    let registerTitle = UILabel()
+
+    let registerTitle: UITextField = {
+        let registerTitle = UITextField()
+
+        registerTitle.backgroundColor = .yellow
+        registerTitle.layer.shadowOffset = .zero
+        registerTitle.layer.shadowColor = UIColor.black.cgColor
+        registerTitle.layer.shadowOpacity = 5
+        registerTitle.clipsToBounds = false
+
+        return registerTitle
+    }()
 
     let datePicker: UIDatePicker = {
         let datePicker = UIDatePicker()
         datePicker.preferredDatePickerStyle = .wheels
         datePicker.datePickerMode = .date
-        
+
         return datePicker
     }()
 
-    let registerDescription = UITextField()
+    let registerDescription: UITextView = {
+        let description = UITextView()
+
+        description.backgroundColor = .yellow
+        description.layer.shadowOffset = .zero
+        description.layer.shadowColor = UIColor.black.cgColor
+        description.layer.shadowOpacity = 5
+        description.clipsToBounds = false
+
+        return description
+    }()
 
     let stackView: UIStackView = {
         let myStackView = UIStackView()
         myStackView.axis = .vertical
         myStackView.alignment = .fill
         myStackView.spacing = 10
-        
+
         return myStackView
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        registerTitle.backgroundColor = .yellow
-        registerTitle.layer.shadowOffset = .zero
-        registerTitle.layer.shadowColor = UIColor.black.cgColor
-        registerTitle.layer.shadowOpacity = 5
 
         navigationItem.title = "TODO"
         navigationItem.leftBarButtonItem = leftButton
@@ -54,7 +70,7 @@ class RegisterViewController: UIViewController {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         registerTitle.translatesAutoresizingMaskIntoConstraints = false
         registerDescription.translatesAutoresizingMaskIntoConstraints = false
-        
+
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15),
             stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -15),
@@ -63,7 +79,5 @@ class RegisterViewController: UIViewController {
             
             registerTitle.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.1)
         ])
-
-        registerDescription.backgroundColor = .green
     }
 }
