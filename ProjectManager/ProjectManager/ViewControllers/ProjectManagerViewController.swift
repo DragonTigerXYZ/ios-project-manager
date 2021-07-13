@@ -23,11 +23,11 @@ class ProjectManagerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let rightBarButton = UIBarButtonItem.init(title: "+", style: .done, target: self, action: #selector(buttonPressed(_:)))
-        navigationItem.rightBarButtonItem = rightBarButton
+        let rightBarButton = UIBarButtonItem.init(barButtonSystemItem: .add, target: self, action: #selector(buttonPressed(_:)))
 
         view.backgroundColor = .white
         navigationItem.title = "Project Manager"
+        navigationItem.rightBarButtonItem = rightBarButton
 
         view.addSubview(stackView)
         stackView.addArrangedSubview(todoTableViewController.view)
@@ -49,10 +49,11 @@ class ProjectManagerViewController: UIViewController {
              doingTableViewController.view.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/3),
              doneTableViewController.view.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/3)
         ])
-
-        }
+    }
+    
     @objc func buttonPressed(_ sender: Any) {
-        self.present(registerViewController, animated: true, completion: nil)
+        let navigationController = UINavigationController(rootViewController: registerViewController)
+        self.present(navigationController, animated: true, completion: nil)
     }
 }
 
