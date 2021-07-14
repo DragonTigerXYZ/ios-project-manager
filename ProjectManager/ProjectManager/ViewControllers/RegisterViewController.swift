@@ -9,8 +9,14 @@ import UIKit
 
 class RegisterViewController: UIViewController {
 
-    let leftButton = UIBarButtonItem.init(title: "Cancel", style: .done, target: self, action: nil)
-    let rightButton = UIBarButtonItem.init(title: "Done", style: .done, target: self, action: nil)
+    let leftButton = UIBarButtonItem.init(title: "Cancel",
+                                          style: .done,
+                                          target: self,
+                                          action: #selector(didHitCancelButton))
+    let rightButton = UIBarButtonItem.init(title: "Done",
+                                           style: .done,
+                                           target: self,
+                                           action: #selector(didHitDoneButton))
 
     let registerTitle: UITextField = {
         let registerTitle = UITextField()

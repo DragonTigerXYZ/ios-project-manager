@@ -18,6 +18,8 @@ class ProjectManagerViewController: UIViewController {
         stackView.alignment = .fill
         stackView.axis = .horizontal
 
+        stackView.spacing = 10
+
         return stackView
     }()
 
