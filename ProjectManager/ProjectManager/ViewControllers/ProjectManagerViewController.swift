@@ -8,7 +8,6 @@ import UIKit
 
 class ProjectManagerViewController: UIViewController {
 
-    let registerViewController = RegisterViewController()
     let todoTableViewController = TODOTableViewController()
     let doingTableViewController = DOINGTableViewController()
     let doneTableViewController = DONETableViewController()
@@ -17,7 +16,6 @@ class ProjectManagerViewController: UIViewController {
         let stackView = UIStackView()
         stackView.alignment = .fill
         stackView.axis = .horizontal
-
         stackView.spacing = 10
 
         return stackView
@@ -47,13 +45,14 @@ class ProjectManagerViewController: UIViewController {
              stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
              stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
 
-            todoTableViewController.view.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/3),
-             doingTableViewController.view.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/3),
+            todoTableViewController.view.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/3, constant: -10),
+             doingTableViewController.view.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/3, constant: -10),
              doneTableViewController.view.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/3)
         ])
     }
     
     @objc func buttonPressed(_ sender: Any) {
+        let registerViewController = RegisterViewController()
         let navigationController = UINavigationController(rootViewController: registerViewController)
         self.present(navigationController, animated: true, completion: nil)
     }
