@@ -65,6 +65,14 @@ class RegisterViewController: UIViewController {
         registerDescription.text = "설명을 입력해주세요"
         registerDescription.textColor = UIColor.lightGray
     }
+    
+    @objc func didHitCancelButton() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func didHitDoneButton() {
+        self.dismiss(animated: true, completion: nil)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

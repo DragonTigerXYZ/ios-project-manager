@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38665C52269EE7C6000B25CC /* RegisterSupportLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38665C51269EE7C6000B25CC /* RegisterSupportLogic.swift */; };
 		38ED2ECC269D28A3008F8703 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ED2ECB269D28A3008F8703 /* RegisterViewController.swift */; };
 		38ED2ED0269D321A008F8703 /* TODOTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ED2ECF269D321A008F8703 /* TODOTableViewController.swift */; };
 		38ED2ED3269D32C9008F8703 /* DOINGTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ED2ED2269D32C9008F8703 /* DOINGTableViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		38665C51269EE7C6000B25CC /* RegisterSupportLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSupportLogic.swift; sourceTree = "<group>"; };
 		38ED2ECB269D28A3008F8703 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		38ED2ECF269D321A008F8703 /* TODOTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOTableViewController.swift; sourceTree = "<group>"; };
 		38ED2ED2269D32C9008F8703 /* DOINGTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOINGTableViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +52,7 @@
 			children = (
 				C7431F0925F51E1D0094C4CF /* ProjectManagerViewController.swift */,
 				38ED2ECB269D28A3008F8703 /* RegisterViewController.swift */,
+				38665C51269EE7C6000B25CC /* RegisterSupportLogic.swift */,
 				38ED2EDD269D833A008F8703 /* TableViewControllers */,
 			);
 			path = ViewControllers;
@@ -174,6 +177,7 @@
 			files = (
 				C7431F0A25F51E1D0094C4CF /* ProjectManagerViewController.swift in Sources */,
 				38ED2F02269ECC70008F8703 /* TODOModel.swift in Sources */,
+				38665C52269EE7C6000B25CC /* RegisterSupportLogic.swift in Sources */,
 				38ED2ED6269D32D3008F8703 /* DONETableViewController.swift in Sources */,
 				C7431F0625F51E1D0094C4CF /* AppDelegate.swift in Sources */,
 				38ED2ED3269D32C9008F8703 /* DOINGTableViewController.swift in Sources */,
